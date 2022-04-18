@@ -1,0 +1,29 @@
+{
+  "name": "steamcord-bot",
+  "version": "1.0.0",
+  "description": "A bot that displays the number of linked Steamcord players as its activity.",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node bin/index.js"
+  },
+  "author": "Steamcord Team",
+  "license": "MIT",
+  "dependencies": {
+    "@discordx/importer": "^1.1.2",
+    "axios": "^0.26.1",
+    "chalk": "^4.1.2",
+    "config": "^3.3.7",
+    "discord.js": "^13.6.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "typescript": "^4.6.3"
+  }
+}

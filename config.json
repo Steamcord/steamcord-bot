@@ -1,0 +1,16 @@
+{
+  "activityMessages": [
+    {
+      "type": "WATCHING",
+      "message": "{{ PLAYER_COUNT }} players linked!",
+      "duration": 3
+    },
+    {
+      "type": "PLAYING",
+      "message": "demo.steamcord.link",
+      "duration": 3
+    }
+  ],
+  "botToken": "<your bot token>",
+  "steamcordToken": "<your Steamcord token>"
+}

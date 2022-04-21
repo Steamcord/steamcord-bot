@@ -12,5 +12,6 @@
     }
   ],
   "botToken": "<your bot token>",
+  "guildID": "<your guild id>",
   "steamcordToken": "<your Steamcord token>"
 }

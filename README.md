@@ -19,6 +19,7 @@ A bot that displays the number of linked Steamcord players as its activity.
     }
   ],
   "botToken": "<your bot token>",
+  "guildID": "<your guild id>",
   "steamcordToken": "<your Steamcord token>"
 }
 ```

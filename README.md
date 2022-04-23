@@ -1,6 +1,6 @@
 # Steamcord Bot
 
-A bot that displays the number of linked Steamcord players as its activity.
+A Discord utliity bot for [Steamcord](https://steamcord.io)
 
 ## Commands
 

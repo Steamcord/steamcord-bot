@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Client } from 'discord.js';
 import IActivityMessage from '../models/activityMessage';
 import { getPlayerCount } from './steamcord';
@@ -22,12 +23,8 @@ function formatPlayerCount(count: number) {
 
 async function formatMessage(message: string) {
   if (message.includes('{{ PLAYER_COUNT }}')) {
-    try {
-      const playerCount = await getPlayerCount();
-      return message.replace('{{ PLAYER_COUNT }}', formatPlayerCount(playerCount));
-    } catch (err) {
-      logError(`Could not reach the Steamcord API.\n${err}`);
-    }
+    const playerCount = await getPlayerCount();
+    return message.replace('{{ PLAYER_COUNT }}', formatPlayerCount(playerCount));
   }
 
   return message;
@@ -35,16 +32,21 @@ async function formatMessage(message: string) {
 
 export async function setActivity(client: Client, messages: IActivityMessage[], index: number) {
   if (index >= messages.length) {
-    // eslint-disable-next-line no-param-reassign
     index = 0;
   }
 
   const { type, message, duration } = messages[index] as IActivityMessage;
 
-  client.user?.setActivity({
-    type,
-    name: await formatMessage(message),
-  });
+  try {
+    client.user?.setActivity({
+      type,
+      name: await formatMessage(message),
+    });
+  } catch (err) {
+    if (axios.isAxiosError(err)) {
+      logError(`Could not reach the Steamcord API.\n${err.message}`);
+    }
+  }
 
   setTimeout(() => setActivity(client, messages, index++), duration * 1_000);
 }

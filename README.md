@@ -2,6 +2,12 @@
 
 A bot that displays the number of linked Steamcord players as its activity.
 
+## Commands
+
+### `/search <id|user>`
+
+Searches for a Steamcord player by an account ID or Discord mention
+
 ## Config
 
 ```json
@@ -18,8 +24,11 @@ A bot that displays the number of linked Steamcord players as its activity.
       "duration": 3
     }
   ],
-  "botToken": "<your bot token>",
+  "botToken": "<your Discord bot token>",
+  "clientID": "<your Discord application client ID>",
+  "commandChannelID": "<the channel ID to use the search command>",
   "guildID": "<your guild id>",
+  "roleID": "<the role ID required to use the search command>",
   "steamcordToken": "<your Steamcord token>"
 }
 ```

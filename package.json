@@ -1,6 +1,6 @@
 {
   "name": "steamcord-bot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A bot that displays the number of linked Steamcord players as its activity.",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,13 @@
   "author": "Steamcord Team",
   "license": "MIT",
   "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
     "@discordx/importer": "^1.1.2",
     "axios": "^0.26.1",
     "chalk": "^4.1.2",
     "config": "^3.3.7",
+    "discord-api-types": "^0.31.2",
     "discord.js": "^13.6.0",
     "reflect-metadata": "^0.1.13"
   },

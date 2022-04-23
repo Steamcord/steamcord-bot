@@ -2,6 +2,11 @@
 
 A Discord utliity bot for [Steamcord](https://steamcord.io)
 
+## Features
+
+* Displays linked players and other messages as activity messages
+* Search linked players using `/search`
+
 ## Commands
 
 ### `/search <id|user>`

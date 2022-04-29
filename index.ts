@@ -3,7 +3,7 @@ import {
 } from 'discord.js';
 import search from './commands/search';
 import {
-  activityMessages, botToken, guildID, roleID,
+  activityMessages, botToken, guildID,
 } from './config.json';
 import IActivityMessage from './models/activityMessage';
 import { startActivityLoop } from './services/activity';
@@ -16,32 +16,12 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.on('ready', async () => {
   await registerCommands();
 
-  if (!client.application?.owner) await client.application?.fetch();
-
   const guild = client.guilds.cache.get(guildID);
 
   if (!guild) {
     logError('Could not find guild');
     return;
   }
-
-  if (!client.application?.owner) await client.application?.fetch();
-
-  const commands = await guild.commands.fetch();
-
-  commands.forEach(async (c) => {
-    await c.setDefaultPermission(false);
-    await guild.commands.permissions.add({
-      command: c.id,
-      permissions: [
-        {
-          id: roleID,
-          type: 'ROLE',
-          permission: true,
-        },
-      ],
-    });
-  });
 
   logInfo('Bot started successfully');
 

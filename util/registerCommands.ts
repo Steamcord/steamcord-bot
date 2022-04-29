@@ -7,6 +7,7 @@ import { logError } from './logging';
 const commands = [
   new SlashCommandBuilder()
     .setName('search')
+    .setDefaultPermission(false)
     .setDescription('Searches for a Steamcord player')
     .addSubcommand((subcommand) => subcommand
       .setName('id')
@@ -19,12 +20,15 @@ const commands = [
     .toJSON(),
 ];
 
-const rest = new REST({ version: '9' }).setToken(botToken);
+const rest = new REST({ version: '8' }).setToken(botToken);
 
 export default async function registerCommands() {
   try {
     await rest.put(Routes.applicationGuildCommands(clientID, guildID), {
-      body: commands,
+      body: commands.map((command: any) => {
+        command.default_member_permissions = '0';
+        return command;
+      }),
     });
   } catch (err) {
     if (err instanceof Error) {

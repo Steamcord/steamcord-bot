@@ -17,24 +17,22 @@ Searches for a Steamcord player by an account ID or Discord mention
 
 ```json
 {
-  "activityMessages": [
-    {
-      "type": "WATCHING",
-      "message": "{{ PLAYER_COUNT }} players linked!",
-      "duration": 3
-    },
-    {
-      "type": "PLAYING",
-      "message": "demo.steamcord.link",
-      "duration": 3
-    }
-  ],
-  "botToken": "<your Discord bot token>",
-  "clientID": "<your Discord application client ID>",
-  "commandChannelID": "<the channel ID to use the search command>",
-  "guildID": "<your guild id>",
-  "roleID": "<the role ID required to use the search command>",
-  "steamcordToken": "<your Steamcord token>"
+    "activityMessages": [
+        {
+            "type": "WATCHING",
+            "message": "{{ PLAYER_COUNT }} players linked!",
+            "duration": 3
+        },
+        {
+            "type": "PLAYING",
+            "message": "demo.steamcord.link",
+            "duration": 3
+        }
+    ],
+    "botToken": "<your Discord bot token>",
+    "clientID": "<your Discord application client ID>",
+    "guildID": "<your guild id>",
+    "steamcordToken": "<your Steamcord token>"
 }
 ```
 

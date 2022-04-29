@@ -1,8 +1,7 @@
 import { CommandInteraction, MessageEmbed } from 'discord.js';
 import {
-  bold, channelMention, hyperlink, inlineCode, time, userMention,
+  bold, hyperlink, inlineCode, time, userMention,
 } from '@discordjs/builders';
-import { commandChannelID } from '../config.json';
 import { IPlayer } from '../models/player';
 import { getPlayers } from '../services/steamcord';
 
@@ -71,17 +70,6 @@ function createEmbeds(player: IPlayer) {
 }
 
 export default async function search(interaction: CommandInteraction) {
-  if (interaction.channelId !== commandChannelID) {
-    await interaction.reply({
-      embeds: [new MessageEmbed()
-        .setTitle('Incorrect channel')
-        .setColor('#cf6679')
-        .setDescription(`This command can only be used in ${channelMention(commandChannelID)}`)],
-    });
-
-    return;
-  }
-
   await interaction.deferReply();
 
   let id: string | null = '';

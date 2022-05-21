@@ -48,7 +48,7 @@ export async function setActivity(client: Client, messages: IActivityMessage[], 
     }
   }
 
-  setTimeout(() => setActivity(client, messages, index++), duration * 1_000);
+  setTimeout(() => setActivity(client, messages, ++index), duration * 1_000);
 }
 
 export async function startActivityLoop(client: Client, messages: IActivityMessage[]) {

@@ -45,6 +45,13 @@ $ npm install
 # run the bot
 $ npm start
 ```
+Or, with Docker:
+
+```bash
+$ docker build . -t steamcord-bot
+
+$ docker run -v $(pwd)/config.json:/app/config.json:ro steamcord-bot
+```
 
 ## License
 

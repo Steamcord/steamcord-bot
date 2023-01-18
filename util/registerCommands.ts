@@ -1,7 +1,7 @@
 import { Routes } from 'discord-api-types/v9';
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { REST } from '@discordjs/rest';
-import { botToken, clientID, guildID } from '../config.json';
+import { botToken, clientID, guildID } from './config';
 import { logError } from './logging';
 
 const commands = [

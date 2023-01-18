@@ -4,6 +4,7 @@
   "description": "A bot that displays the number of linked Steamcord players as its activity.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "start": "tsc && node bin/index.js"
   },
   "author": "Steamcord Team",

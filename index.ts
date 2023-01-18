@@ -2,11 +2,10 @@ import {
   Client, Intents, Interaction,
 } from 'discord.js';
 import search from './commands/search';
-import {
-  activityMessages, botToken, guildID,
-} from './config.json';
+
 import IActivityMessage from './models/activityMessage';
 import { startActivityLoop } from './services/activity';
+import { activityMessages, botToken, guildID } from './util/config';
 import { logInfo, logError } from './util/logging';
 import registerCommands from './util/registerCommands';
 import setAxiosDefaults from './util/setAxiosDefaults';

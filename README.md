@@ -48,9 +48,11 @@ $ npm start
 Or, with Docker:
 
 ```bash
-$ docker build . -t steamcord-bot
+# download config
+$ wget https://raw.githubusercontent.com/Steamcord/steamcord-bot/main/config.json
 
-$ docker run -v $(pwd)/config.json:/app/config.json:ro steamcord-bot
+# download the image from Docker Hub and run it
+$ docker run -v $(pwd)/config.json:/app/config.json:ro steamcord/bot
 ```
 
 ## License

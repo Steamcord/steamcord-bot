@@ -13,8 +13,6 @@
   ],
   "botToken": "<your Discord bot token>",
   "clientID": "<your Discord application client ID>",
-  "commandChannelID": "<the channel ID to use the search command>",
   "guildID": "<your guild id>",
-  "roleID": "<the role ID required to use the search command>",
   "steamcordToken": "<your Steamcord token>"
 }

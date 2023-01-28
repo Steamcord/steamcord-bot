@@ -7,6 +7,11 @@ A Discord utliity bot for [Steamcord](https://steamcord.io)
 * Displays linked players and other messages as activity messages
 * Search linked players using `/search`
 
+## Required Scopes
+
+* `bot`
+* `applications.commands` (to create the `/search` command)
+
 ## Commands
 
 ### `/search <id|user>`
